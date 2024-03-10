@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    font-family: "Hind", sans-serif;
+}
+/* Header*/
+header{
+    position: absolute;
+    width: 100%;
+    top:20px;
+    left: 0;
+    z-index: 2;
+}
+header .nav-link,span{
+    color: white;
+}
+header .nav-item{
+    padding: 0 10px;
+}
+/* before ,after*/
+header .nav-item ::after {
+    content:"" ;
+    width: 0;
+    height: 1px;
+    background-color: #35a22c;
+    display: block;
+    transition: all .5s;
+}
+header .nav-item:hover ::after{
+width: 100%;
+}
+/* thẻ li có class active thì after lun ko đổi */
+header .active ::after{
+    width: 100%;
+}
+/* responsive cách 1 nằm cuối ở header
+cach 2 la de cuoi code cua css web*/
+@media screen and (max-width: 992px) {
+    /* quy dinh css rieng cho vung <= 992px */
+    header .navbar-toggler{
+       background-color: #35a22c;
+       color: white;
+    }
+    #navbarSupportedContent .navbar-nav{
+        background-color: white;
+    }
+    #navbarSupportedContent .nav-link{
+        color: green;
+    }
+    header .nav-item:hover ::after, header .active ::after {
+        width: 0;
+    }
+    #navbarSupportedContent .nav-item:hover {
+        background-color: #35a22c;
+    }
+    #navbarSupportedContent .nav-item:hover .nav-link {
+        color: white;
+    }
+   /*Không sử dụng trực tiếp các class màn hình của BS khi đè code media theo destop first */ 
+    
+
+}
+
+
+
+
+/* Carousel*/
+/*Issue1: hinh nen*/
+#carouselPort .carousel-item>img{
+height: 100vh;
+object-fit: cover;
+filter: brightness(0.7);
+}
+/*Issue2:anh avatar*/
+#carouselPort .carousel-caption img{ 
+    width: 140px;
+    border-radius: 50%;
+}
+/*Issue3: can giua caption*/
+#carouselPort .carousel-caption {
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
+}
+/*project*/
+.projects_content .nav{
+    justify-content: center;
+}
+.projects_row {
+gap: 30px 0;
+}
+/*Award*/
+.award{
+    background-image: url(../img/memphis_3.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    
+}
+.award_left {
+    padding: 45px;
+    background-color: rgba(255, 255, 255,0.25);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .3);
+    backdrop-filter: blur(8px);
+}
+
+/*reposive cach 2 */
